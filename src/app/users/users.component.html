@@ -1,0 +1,36 @@
+<div class="container">
+  <button class="btn btn-success" (click)="addEmp()">Add Employee</button>
+  <table class="table table-bordered mt-4">
+    <thead class="thead-dark">
+      <tr>
+        <th>S.No</th>
+        <th>name</th>
+        <th>company</th>
+        <th>salary</th>
+        <th>phonenumber</th>
+        <th>Dob</th>
+        <th>image</th>
+        <th>remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; index as i">
+        <td>
+          <span class="badge">{{ i + 1 }}</span>
+        </td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.company }}</td>
+        <td>{{ user.salary }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.dob }}</td>
+        <td><img src="{{ user.img }}" alt="phone" /></td>
+
+        <td>
+          <button (click)="removeEmp(user)" class="btn btn-danger">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

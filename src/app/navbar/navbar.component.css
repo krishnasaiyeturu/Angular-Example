@@ -1,0 +1,35 @@
+.logo {
+  color: rgb(rgb(177, 27, 27), green, blue);
+  height: 50px;
+  font-size: 30px;
+  line-height: 50px;
+  font-weight: bold;
+  float: left;
+  /* animation: m 8s linear; */
+}
+.logo a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+@keyframes m {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(750deg);
+  }
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 999;
+}
+ul li:hover {
+  background: gray;
+}
+
+@media (max-width: 480px) {
+}

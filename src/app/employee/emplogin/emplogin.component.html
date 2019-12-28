@@ -1,0 +1,30 @@
+<p>emplogin works!</p>
+
+<img [src]="a" alt="" />
+<button [class.jspiders]="isActive">submit</button>
+<button [style.backgroundColor]="color">style binding</button>
+
+<input type="text" (keyup)="keyupEvent($event)" placeholder="javascript" />
+
+<input
+  type="text"
+  (keyup.enter)="angularEvent($event)"
+  placeholder="enter...."
+/>
+<!-- angular with event object-->
+
+<input
+  type="email"
+  #email
+  (keyup.enter)="emailEvent(email)"
+  placeholder="enteremail"
+/>
+
+<input
+  type="text"
+  placeholder="enter..."
+  class="form-control"
+  [(ngModel)]="username"
+/>
+
+<h1>{{ username }}</h1>

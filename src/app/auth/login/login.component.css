@@ -1,0 +1,10 @@
+#ed {
+  position: relative;
+  top: 100px;
+}
+input.ng-valid {
+  border: 2px solid green;
+}
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}

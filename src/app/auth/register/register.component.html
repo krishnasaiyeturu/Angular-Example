@@ -1,0 +1,126 @@
+<div class=" container card mt-4" id="ed">
+  <div class="card-body">
+    <h1 class="text-center ">{{ registertitle }}</h1>
+    <form action="" #form="ngForm" (ngSubmit)="submit(form)">
+      <label for="">Name</label>
+      <div class="row">
+        <div class="col">
+          <input
+            #Firstname="ngModel"
+            ngModel
+            required
+            minlength="3"
+            name="Firstname"
+            type="text"
+            class="form-control"
+            placeholder="First name"
+          />
+        </div>
+
+        <div class="col">
+          <input
+            #Lastname="ngModel"
+            ngModel
+            required
+            minlength="3"
+            name="Lastname"
+            type="text"
+            class="form-control"
+            placeholder="Last name"
+          />
+        </div>
+      </div>
+      <div *ngIf="Firstname.touched && Firstname.invalid" class="text-danger">
+        <p *ngIf="Firstname.errors.required">firstname is required</p>
+        <p *ngIf="Firstname.errors.minlength">
+          required more than 3 characters
+        </p>
+        <p *ngIf="Firstname.errors.pattern">username not matched</p>
+      </div>
+      <div *ngIf="Lastname.touched && Lastname.invalid" class="text-danger">
+        <p *ngIf="Lastname.errors.required">Lastname is required</p>
+        <p *ngIf="Lastname.errors.minlength">
+          required more than 3 characters
+        </p>
+        <p *ngIf="Lastname.errors.pattern">username not matched</p>
+      </div>
+
+      <label for="">Email</label>
+      <input
+        #Email="ngModel"
+        ngModel
+        required
+        type="email"
+        name="Email"
+        class="form-control"
+        placeholder="enter email"
+      />
+      <div *ngIf="Email.touched && Email.invalid" class="text-danger">
+        <p *ngIf="Email.errors.required">email is required</p>
+        <p *ngIf="Email.errors.pattern">enter valid email</p>
+      </div>
+      <label for="">Phone number</label>
+      <input
+        #Phonenumber="ngModel"
+        ngModel
+        required
+        minlength="10"
+        maxlength="10"
+        pattern="[0-9]{10}"
+        type="text"
+        name="Phonenumber"
+        class="form-control"
+        placeholder="enter Phonenumber"
+      />
+      <div
+        *ngIf="Phonenumber.touched && Phonenumber.invalid"
+        class="text-danger"
+      >
+        <p *ngIf="Phonenumber.errors.required">number is required</p>
+        <p *ngIf="Phonenumber.errors.pattern">enter only numbers</p>
+        <p *ngIf="Phonenumber.errors.minlength">
+          required 10 characters
+        </p>
+        <p *ngIf="Phonenumber.errors.maxlength">
+          required 10 characters
+        </p>
+      </div>
+      <label for="">Gender</label><br />
+      <input
+        type="radio"
+        class="ml-2"
+        name="gender"
+        #gender="ngModel"
+        ngModel
+        required
+        value="male"
+      />
+      Male
+      <input
+        type="radio"
+        #gender="ngModel"
+        ngModel
+        required
+        class="ml-2"
+        name="gender"
+        value="female"
+      />
+      Female
+      <input
+        type="radio"
+        #gender="ngModel"
+        ngModel
+        required
+        class="ml-2"
+        name="gender"
+        value="other"
+      />
+      Other
+      <div *ngIf="gender.touched && gender.invalid" class="text-danger">
+        <p *ngIf="gender.errors.required">number is required</p>
+      </div>
+
+      <button class="btn-primary form-control">Submit</button>
+    </form>
+  </div>
+</div>
